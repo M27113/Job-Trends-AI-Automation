@@ -133,9 +133,9 @@ I built an end-to-end AI-powered workflow that tracks trending job-related updat
 
 ## 📸 Screenshort / Sample output
 
-![Sample_output][/Job_Trends.png]
+![Sample_output](/Job_Trends.png)
 
-- you can find the sample output generated here : sample_output.xlsx
+- you can find the sample sheet generated here : [sample_output](https://github.com/M27113/Job-Trends-AI-Automation/tree/main/sample_output.xlsx)
 
 ## ⚠️ Notes
 
