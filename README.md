@@ -135,9 +135,11 @@ I built an end-to-end AI-powered workflow that tracks trending job-related updat
 
 ## 📸 Screenshort / Sample output
 
+  Once you run the project succesfully , you should be able to see your updated google sheet similar to this : 
+
 ![Sample_output](/Job_Trends.png)
 
-- you can find the sample sheet generated here : [sample_output](https://github.com/M27113/Job-Trends-AI-Automation/tree/main/sample_output.xlsx)
+- You can find the sample sheet generated here : [sample_output](https://github.com/M27113/Job-Trends-AI-Automation/tree/main/sample_output.xlsx)
 
 ## ⚠️ Notes
 
