@@ -8,15 +8,37 @@ I built an end-to-end AI-powered workflow that tracks trending job-related updat
 ---
 
 ## 📌 Project Overview
-This project automates:
 
-1. **Data Extraction** – Collect trending job-related topics from Google Trends.
-2. **Categorization** – Classify trends into Admit Card, Job Notification, Result, or Not Relevant using AI.
-3. **Content Generation** – Generate Instagram posts, blogs, YouTube reels, and thumbnail ideas via GPT-4o-mini.
-4. **Google Sheet Update** – Update trends and generated content for review or publishing.
+**Phase 1 – Data Extraction**
+- Fetch trending job-related topics from Google Trends.
+- Remove duplicate entries.
+- Store data in a Google Sheet.
 
-**Purpose:** Build a portfolio-ready project showcasing AI, automation, and workflow integration skills.
+**Phase 2 – Trend Categorization**
+- Categorize trends using GPT-4o-mini:
+  - Admit Card
+  - Job Notification
+  - Result
+  - Not Relevant
+- Update the Google Sheet with categories.
 
+**Phase 3 – Content Generation**
+- Generate content for each trend and category:
+  - Instagram Post (caption + hashtags)
+  - Blog Draft (2–3 paragraphs + placeholder links)
+  - YouTube Reel (caption + hashtags)
+  - Thumbnail Idea
+- Update the Google Sheet automatically.
+
+**Phase 4 – Sheet Update**
+- Append new trends.
+- Skip duplicates.
+- Maintain a `Status` column for tracking workflow progress.
+
+**Phase 5 – Simulated Publishing**
+- Update sheet entries with "Published" placeholders for trends marked `Approved`.
+- Generates placeholder links for Instagram, Blog, Reel, and Thumbnail.
+- Content remains in the sheet until manually approved.
 ---
 
 ## 🛠 Tech Stack
@@ -32,9 +54,10 @@ This project automates:
     
     job-trends-ai/
     │
-    ├─ phase1_data_extraction.py
-    ├─ phase2_data_categorization.py
-    ├─ phase3_content_generation.py
+    ├─ phase1_data_extraction.ipynb
+    ├─ phase2_data_categorization.ipynb
+    ├─ phase3_content_generation.ipynb
+    ├─ ai_job_trends_workflow_publish.py
     ├─ credentials.json # Keep private
     └─ .env 
     ├─ requirements.txt
@@ -43,30 +66,54 @@ This project automates:
 ---
 
 ## ⚡ Quick Start
-1. **Clone the repo:**  
+## ⚙️ Setup Instructions
+
+1. **Clone the repository**
     ```bash
-    git clone https://github.com/yourusername/job-trends-ai.git
-    cd job-trends-ai
+    git clone <your-repo-url>
+    cd <repo-folder>
+2. Create a virtual environment
+    ```bash
+    python -m venv venv
+    source venv/bin/activate   # Linux/macOS
+    venv\Scripts\activate      # Windows
+3. Install dependencies
+    ```bash
+    pip install -r requirements.txt
+4. Setup Google Sheets API
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-
-3. **Set environment variable:**
-
-   export OPENAI_API_KEY="your_openai_api_key"
-
-4. **Configure Google Sheets:**
-
-    - Place credentials.json in the repo root.
+    - Create a Google Service Account.
     
-    - Share your sheet with the service account email.
+    - Download credentials.json.
+    
+    - Share your target Google Sheet with the service account email.
 
-5. **Run each phase:**
+5. Configure environment variables
 
-    - python phase1_data_extraction.py
-    - python phase2_data_categorization.py
-    - python phase3_content_generation.py
+    Create a .env file:
+    ```bash
+    OPENAI_API_KEY=your_openai_api_key_here
+   
+6. Prepare Google Sheet
+    - Ensure columns:
+        Trend | Category | Instagram | Blog | Reel | Thumbnail | Status
+    
+    - Leave it empty initially; the script will populate it.
+7. 🏃 Run the Full Pipeline
+   ```bash
+    python ai_job_trends_workflow_publish.py
+   
+- The script will:
+    
+    - Fetch trending job topics from Google Trends.
+    
+    - Categorize them using GPT-4o-mini.
+    
+    - Generate content for each trend.
+    
+    - Update the Google Sheet.
+    
+    - Simulate publishing for trends marked as Approved.
 
 ## 🏆 Highlights 
 
@@ -79,20 +126,16 @@ This project automates:
 ## 🔮 Future Improvements
 
   - Add direct social media publishing (Instagram, YouTube, Blog).
-  
+  - Add human approval workflow with notifications.
   - Include more trend categories and smarter AI categorization.
-  
   - Cloud-based scheduled workflow for continuous automation.
-  
   - Fine-tune GPT models for higher-quality content.
 
-## 📸 Screenshots / Demo
+## 📸 Screenshort / Sample output
 
-  - Google Sheet with trends & categories
-  
-  - AI-generated Instagram post
-  
-  - Blog Draft Sample
+![Sample_output][/Job_Trends.png]
+
+- you can find the sample output generated here : sample_output.xlsx
 
 ## ⚠️ Notes
 
