@@ -70,17 +70,19 @@ I built an end-to-end AI-powered workflow that tracks trending job-related updat
 
 1. **Clone the repository**
     ```bash
-    git clone <your-repo-url>
-    cd <repo-folder>
-2. Create a virtual environment
+    git clone https://github.com/M27113/Job-Trends-AI-Automation.git
+    cd Job-Trends-AI-Automation
+    
+2. **Create a virtual environment**
     ```bash
     python -m venv venv
     source venv/bin/activate   # Linux/macOS
     venv\Scripts\activate      # Windows
-3. Install dependencies
+    
+3. **Install dependencies** 
     ```bash
     pip install -r requirements.txt
-4. Setup Google Sheets API
+4. **Setup Google Sheets API**
 
     - Create a Google Service Account.
     
@@ -88,18 +90,18 @@ I built an end-to-end AI-powered workflow that tracks trending job-related updat
     
     - Share your target Google Sheet with the service account email.
 
-5. Configure environment variables
+5. **Configure environment variables**
 
     Create a .env file:
     ```bash
     OPENAI_API_KEY=your_openai_api_key_here
    
-6. Prepare Google Sheet
+6. **Prepare Google Sheet**
     - Ensure columns:
         Trend | Category | Instagram | Blog | Reel | Thumbnail | Status
     
     - Leave it empty initially; the script will populate it.
-7. 🏃 Run the Full Pipeline
+7. **🏃 Run the Full Pipeline**
    ```bash
     python ai_job_trends_workflow_publish.py
    
